@@ -1,0 +1,51 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.WaitCustomerModelView
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Waitlist Details</h3>
+<hr />
+<br />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Restaurant)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Restaurant)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PartySizew)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PartySizew)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WaitlistStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WaitlistStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EntryOriginw)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EntryOriginw)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WaitlistPosition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WaitlistPosition)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-dark" asp-action="WaitlistShow">Back to List</a>
+</div>

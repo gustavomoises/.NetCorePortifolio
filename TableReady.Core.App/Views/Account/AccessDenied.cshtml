@@ -1,0 +1,42 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)/Jessy Perreault (Web Designer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<style>
+    /* Custom Styles for only the Home Page*/
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        /*padding-top: 15vh;*/
+        /*            padding: 22vh 10vw;*/
+        padding: 7vh 10vw;
+        min-width: 100vw;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+
+<img src="~/Images/forbidden.png" height="250" />
+
+<h3 class="display-3 text-dark">Access Denied</h3>
+<br />
+<p class="text-dark">
+    Sorry, you are not authorized to go to this page.
+    <br />
+    Please contact the manager if you need access.
+</p>
+

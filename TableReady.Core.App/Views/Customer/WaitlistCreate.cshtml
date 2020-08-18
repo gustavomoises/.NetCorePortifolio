@@ -1,0 +1,44 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.WaitCustomerModelView
+
+@{
+    ViewData["Title"] = "Add To Waitlist";
+}
+<div id="Error" style="color: red;">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+<div id="Error" style="color: blue;">
+    <p>@ViewBag.Message</p>
+</div>
+<h3>Add To Waitlist</h3>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="WaitlistCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RestaurantID" class="control-label"></label>
+                <select id="uxUsertypes" asp-for="RestaurantID" asp-items="ViewBag.Restaurants" class="form-control"></select>
+                <span asp-validation-for="RestaurantID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartySizew" class="control-label"></label>
+                <input type="number" min="1" max="100" asp-for="PartySizew" class="form-control" />
+                <span asp-validation-for="PartySizew" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-dark" asp-action="WaitlistShow">Back to List</a>
+</div>
+

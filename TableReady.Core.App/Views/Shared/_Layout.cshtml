@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TableReady.Core.App</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/fc9ab3d3cb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand fontPrimaryLogo text-White" asp-area="" asp-controller="Home" asp-action="Index">
+                <img class="m-0 p-0" src="~/Images/Logo.png" height="50" /> Table<span class="clip-text-TRGradient">Ready</span> 
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav flex-grow-1 justify-content-between">
+                    <div class="seperator d-flex">
+                        <li class="nav-item text-white mx-1">
+                            <a class="nav-link text-White" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <partial name="_LoginSecurePartial" class="text-White" />
+                    </div>
+                    <div>
+                        <partial name="_LoginPartial" class="text-White" />
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer bg-dark text-White">
+        <div class="container text-White">
+            &copy; 2020 - TableReady - <a class="text-TRPrimary" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

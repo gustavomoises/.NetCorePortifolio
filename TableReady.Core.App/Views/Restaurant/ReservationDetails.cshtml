@@ -1,0 +1,60 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.ResCustomerModelView
+
+@{
+    ViewData["Title"] = "Reservation Details";
+}
+
+<h3>Reservation Details</h3>
+<hr />
+<br />
+<div>
+    <h4>ResCustomerModelView</h4>
+    <br />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReservationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PartySize)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PartySize)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EntryOrigin)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EntryOrigin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReservationStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReservationStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "ReservationEdit", new { id = Model.ReservationEntryId }, new { @class = "btn btn-success mx-1" }) |
+    <a class="btn btn-dark" asp-action="ReservationManage">Back to List</a>
+</div>

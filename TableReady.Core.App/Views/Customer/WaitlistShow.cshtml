@@ -1,0 +1,73 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model IEnumerable<TableReady.Core.App.Models.WaitCustomerModelView>
+
+@{
+    ViewData["Title"] = "ShowWaitlist";
+}
+<div id="Error" style="color: red;">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+<div id="Error" style="color: blue;">
+    <p>@ViewBag.Message</p>
+</div>
+<h3>Waitlist</h3>
+<hr />
+<br />
+<p>
+    <a class="btn btn-success" asp-action="WaitlistCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartySizew)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WaitlistStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryOriginw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WaitlistPosition)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartySizew)
+                    @Html.ActionLink("Update", "WaitlistEditParty", "Customer", new { id = (int)item.WaitlistEntryId })
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WaitlistStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryOriginw)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WaitlistPosition)
+                </td>
+                <td>
+                    @Html.ActionLink("Cancel", "WaitlistCancel", new { id = (int)item.WaitlistEntryId }, new { @class = "btn btn-danger mx-1" }) |
+                    @Html.ActionLink("Details", "WaitlistDetails", new { id = (int)item.WaitlistEntryId }, new { @class = "btn btn-primary mx-1" })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

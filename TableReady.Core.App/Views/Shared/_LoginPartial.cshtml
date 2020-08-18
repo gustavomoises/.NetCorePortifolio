@@ -1,0 +1,24 @@
+﻿
+    <ul class="navbar-nav">
+        @if (User.Identity.IsAuthenticated)
+        {
+        <li class="nav-item">
+            @*<a href="C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.App\Views\Shared\_LoginPartial.cshtml">C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.App\Views\Shared\_LoginPartial.cshtml</a>*@
+            <a style="max-width: 250px;" class="nav-link text-white navIconHover cIconSize" asp-controller="Account" asp-action="Profile" title="Welcome">@User.Identity.Name@{ if (TempData["RestaurantName"] != null) ViewBag.RestaurantName = $"@{(string)TempData["RestaurantName"]}"; }@ViewBag.RestaurantName</a>
+        </li>
+            <li class="nav-item">
+                <form class="form-inline" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home")">
+                    <button type="submit" data-toggle="tooltip" title="Logout" data-placement="top" class="nav-link btn btn-link text-white"><i class="fas fa-sign-out-alt text-white navIconHover cIconSize"></i></button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a style="max-width: 25px;" class="nav-link text-white mx-2" data-toggle="tooltip" title="Register" data-placement="top" asp-controller="Account" asp-action="Register"><i class="fas fa-user-plus text-white navIconHover cIconSize"></i></a>
+            </li>
+            <li class="nav-item" >
+                <a style="max-width: 25px;" class="nav-link text-White mx-2" data-toggle="tooltip" title="Login" data-placement="top" asp-controller="Account" asp-action="Login"><i class="fas fa-sign-in-alt text-white navIconHover cIconSize"></i></a>
+            </li>
+        }
+    </ul>

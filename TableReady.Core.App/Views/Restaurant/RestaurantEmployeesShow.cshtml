@@ -1,0 +1,70 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model IEnumerable<TableReady.Core.App.Models.EmployeeModelView>
+
+@{
+    ViewData["Title"] = "RestaurantEmployeesShow";
+}
+
+<h3>Restaurant Employees</h3>
+<hr />
+<br />
+<h4>New Employee Applications</h4>
+<div>
+    @await Component.InvokeAsync("EmployeeApproval", ViewBag.RestaurantID)
+</div>
+
+<h4>Employee List</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.RequestStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestStatus)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EmployeeEdit", new { id = item.EmployeeId }, new { @class = "btn btn-success mx-1" }) |
+                    @Html.ActionLink("Details", "EmployeeDetails", new { id = item.EmployeeId }, new { @class = "btn btn-primary mx-1" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,115 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.RegisterModelView
+@{
+    ViewData["Title"] = "Profile";
+
+}
+
+<style>
+    .list-group-item:nth-child(1) {
+        font-weight: bolder;
+    }
+
+    .list-group-item:nth-child(2) {
+        max-width: 20vw;
+    }
+</style>
+<div id="Error" style="color: red;">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+<div id="Error" style="color: blue;">
+    <p>@ViewBag.Message</p>
+</div>
+<h3>User Profile</h3>
+<br />
+<hr />
+<div>
+    @Html.ActionLink("Edit", "EditProfile", new { id = Model.AuthId }, new { @class = "btn btn-success mx-1" })
+</div>
+<br />
+<div>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.FirstName)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.LastName)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.LastName)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.Address)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.Address)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.City)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.City)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.Province)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.Province)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.Country)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.Country)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.Email)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.Email)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.Phone)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.Phone)
+        </li>
+    </ul>
+    <ul class="row list-group-horizontal pl-3">
+        <li class="col-sm-2 list-group-item">
+            @Html.DisplayNameFor(model => model.Username)
+        </li>
+        <li class="col-sm-10 list-group-item">
+            @Html.DisplayFor(model => model.Username)
+        </li>
+    </ul>
+</div>
+
+<div>
+    @await Component.InvokeAsync("OwnerList", ViewBag.Owner)
+</div>
+
+<div>
+    @await Component.InvokeAsync("EmployeeList", ViewBag.Employee)
+</div>

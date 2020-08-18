@@ -1,0 +1,72 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model IEnumerable<TableReady.Core.App.Models.WaitCustomerModelView>
+
+@{
+    ViewData["Title"] = "Host Management";
+}
+
+<h3>Host Controls</h3>
+<hr />
+<br />
+
+<h4>Waiting for Table</h4>
+<div>
+    @await Component.InvokeAsync("CheckinReservations", ViewBag.RestaurantID)
+</div>
+<h4>Reservations</h4>
+<div>
+    @await Component.InvokeAsync("HostReservationManage", ViewBag.RestaurantID)
+</div>
+<h4>Waitlist</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WaitlistPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartySizew)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryOriginw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WaitlistStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WaitlistPosition)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartySizew)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryOriginw)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WaitlistStatus)
+                </td>
+                <td>
+                    @Html.ActionLink("Cancel", "WaitlistCancel", new { id = item.WaitlistEntryId }, new { @class = "btn btn-danger mx-1" }) |
+                    @Html.ActionLink("No Show", "WaitlistNoShow", new { id = item.WaitlistEntryId }, new { @class = "btn btn-warning mx-1" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

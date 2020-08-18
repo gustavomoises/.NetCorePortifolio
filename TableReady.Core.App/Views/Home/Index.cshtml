@@ -1,0 +1,50 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)/Jessy Perreault (Web Designer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    /* Custom Styles for only the Home Page*/
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        color: white;
+        /*padding-top: 15vh;*/
+        /*            padding: 22vh 10vw;*/
+        padding: 18vh 10vw;
+        min-width: 100vw;
+        background-image: url('images/restaurantoverlay2.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
+<div class="text-white">
+    <h1 class="display-3">Table<span class="clip-text-TRGradient ">Ready</span></h1>
+    <br />
+    <p class="lead">
+        Welcome! This Website is currently under construction, but we hope you
+        <br />
+        enjoy what you see so far.
+    </p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a class="btn btn-danger" asp-controller="Account" asp-action="Profile">View Profile</a>
+    }
+    else
+    {
+        <table>
+            <tr>
+                <td><a class="btn btn-danger" asp-controller="Account" asp-action="Login">Login</a></td>
+                <td><a class="btn btn-danger mx-4" asp-controller="Account" asp-action="Register">Register</a></td>
+            </tr>
+        </table>
+    }
+</div>

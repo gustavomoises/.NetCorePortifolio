@@ -1,0 +1,13 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.RestaurantLoginModelView
+@{
+    Layout = null;
+}
+
+<label asp-for="RestaurantId" class="control-label"></label>
+<select asp-for="RestaurantId" class="form-control" asp-items="ViewBag.Restaurants"></select>
+<span asp-validation-for="RestaurantId" class="text-danger"></span>

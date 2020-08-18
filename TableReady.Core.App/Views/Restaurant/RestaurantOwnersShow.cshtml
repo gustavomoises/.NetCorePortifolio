@@ -1,0 +1,74 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model IEnumerable<TableReady.Core.App.Models.OwnerModelView>
+
+@{
+    ViewData["Title"] = "RestaurantOwnersShow";
+}
+
+<h3>Restaurant Owners</h3>
+<hr />
+<br />
+<h4>New Owner Applications</h4>
+<div>
+    @await Component.InvokeAsync("OwnerApproval", ViewBag.RestaurantID)
+</div>
+
+<h4>Owner List</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.RequestStatus)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OwnerFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestStatus)
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Edit", "OwnerEdit", new { id = item.OwnerId }, new { @class = "btn btn-success mx-1" }) |
+                    @Html.ActionLink("Details", "OwnerDetails", new { id = item.OwnerId }, new { @class = "btn btn-primary mx-1" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

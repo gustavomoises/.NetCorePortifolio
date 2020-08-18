@@ -1,0 +1,28 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    @if (TempData["RestaurantName"] == null)
+    {
+        <li class="nav-item dropdown text-white mx-1">
+            <a class="nav-link dropdown-toggle text-White" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Customer</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" asp-area="" asp-controller="Customer" asp-action="ReservationsShow">Reservations</a>
+                <a class="dropdown-item" asp-area="" asp-controller="Customer" asp-action="WaitlistShow">Waitlist</a>
+                <a class="dropdown-item" asp-area="" asp-controller="Customer" asp-action="RecordsShow">History</a>
+            </div>
+        </li>
+    }
+    else 
+    {
+        <li class="nav-item dropdown text-white mx-1">
+            <a class="nav-link dropdown-toggle text-White" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Restaurant</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" asp-area="" asp-controller="Restaurant" asp-action="RestaurantShow">Restaurant</a>
+                <a class="dropdown-item" asp-area="" asp-controller="Restaurant" asp-action="RestaurantOwnersShow">Owners</a>
+                <a class="dropdown-item" asp-area="" asp-controller="Restaurant" asp-action="RestaurantEmployeesShow">Employees</a>
+                <a class="dropdown-item" asp-area="" asp-controller="Restaurant" asp-action="ReservationManage">Restaurant Reservations</a>
+                <a class="dropdown-item" asp-area="" asp-controller="Restaurant" asp-action="HostManage">Host Management</a>
+            </div>
+        </li>
+    }
+}
+

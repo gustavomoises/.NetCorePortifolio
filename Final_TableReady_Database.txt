@@ -1,0 +1,402 @@
+USE master
+GO
+
+/****** Object:  Database MyWebDB     ******/
+IF DB_ID('TableReady') IS NOT NULL
+	DROP DATABASE TAbleReady
+GO
+
+CREATE DATABASE TableReady
+GO 
+
+USE TableReady
+GO
+
+
+
+create table Authentication(
+	ID int constraint ID_PK  primary key identity,
+	Username varchar(20) not null,
+	Password varchar (20) not null,
+)
+GO
+
+
+
+create table Users(
+	UserID int constraint UserID_PK  primary key identity,
+	FirstName varchar (20) not null,
+	LastName varchar(30) not null,
+	Address varchar(30) null,
+	City varchar(30) null,
+	Province varchar(30) null,
+	Country varchar(30) null,
+	Birthday datetime null,
+	Email varchar(30) not null,
+	Phone varchar(30) null,
+	AuthenticationID int constraint AuthenticationUser_FK foreign key references Authentication(ID) not null
+
+)
+
+GO
+
+
+
+create table Customers(
+	CustomerID int constraint CustomerID_PK  primary key identity not null,
+	CustomerFirstName varchar (20),
+	CustomerLastName varchar (20),
+	UserID int constraint UserCustomer_FK foreign key references Users(UserID) not null
+)
+
+GO
+
+create table Restaurants(
+	RestaurantId int constraint RestaurantID_PK  primary key identity,
+	RestaurantName varchar(40),
+	LayoutActive int default null
+)
+
+GO
+
+create table AuthenticationMatrix(
+	AuthenticationID int constraint Matrix_Auth_FK foreign key references Authentication(ID) not null,
+	RestaurantID int constraint Matrix_Rest_FK foreign key references Restaurants(RestaurantId) not null,
+	Role varchar(20) not null,
+	primary key(AuthenticationID, RestaurantID)  
+)
+GO
+
+create table Employees(
+	EmployeeID int constraint EmployeeID_PK  primary key identity,
+	UserID int constraint UserEmployee_FK foreign key references Users(UserID) not null
+)
+
+GO
+create table Owners(
+	OwnerID int constraint OwnerID_PK  primary key identity,
+	UserID int constraint UserOwner_FK foreign key references Users(userID) not null
+)
+
+GO
+
+Create table RestaurantEmployees(
+	RestaurantId int constraint RE_Restaurant_FK foreign key references Restaurants(RestaurantId) not null,
+	EmployeeID int constraint RE_Employees_FK foreign key references Employees(EmployeeId) not null,
+	Status varchar(30) not null default 'Inactive',
+	StartDate datetime not null default getdate(),
+	EndDate datetime null,
+	Active bit not null default 0,
+	NewRequestFlag bit not null default 1,
+	RequestStatus varchar(10) not null default 'On Hold',
+	primary key(RestaurantID, EmployeeID)  
+
+)
+
+GO
+
+Create table RestaurantOwners(
+	RestaurantId int constraint RO_Restaurant_FK foreign key references Restaurants(RestaurantId) not null,
+	OwnerID int constraint RO_Owners_FK foreign key references Owners(OwnerId) not null,
+	Status varchar(30) not null default 'Inactive',
+	StartDate datetime not null default getdate() ,
+	EndDate datetime null,
+	Active bit not null default 0,
+	Request bit not null default 1,
+	RequestStatus varchar(10) not null default 'On Hold',
+	primary key(RestaurantID, OwnerID)  
+
+)
+
+GO
+
+
+create table Layouts(
+	LayoutId int constraint LayoutID_PK  primary key identity,
+	RestaurantID int not null,
+	LayoutName varchar(20) not null,
+	LayoutImage varchar(100) default null,
+	constraint LayoutRestaurant_FK foreign key(RestaurantID) references Restaurants(RestaurantID) 
+)
+
+GO
+
+alter table Restaurants
+add constraint RestaurantLayout_FK foreign key(LayoutActive) references Layouts(LayoutID) 
+GO
+
+
+
+create table Tables(
+	TableID int constraint TableID_PK  primary key identity,
+	RestaurantID int,
+	TableName varchar(10) not null,
+	TableMaxNumberSeats int not null,
+	TableImage varchar(100) default null,
+	TableImageAvailable varchar(100) default null,
+	TableImageUnavailable varchar(100) default null,
+	TableImageCheckout varchar(100) default null,
+	TableImageCleaning varchar(100) default null,
+	TableType text default null,
+	TableSize text default null,
+	CreationDate datetime not null default getdate(),
+	TableActive bit not null,
+	constraint TableRestaurant_FK foreign key(RestaurantID) references Restaurants(RestaurantID) 
+)
+
+
+create table TableGroups
+(
+    TableGroupID int constraint TableGroupID_PK primary key identity not null,
+    LayoutID int constraint LayoutID_FK foreign key references Layouts(LayoutID) not null,
+    TableGroupName varchar(50),
+    TableGroupPriority int,
+    TableGroupPosX decimal null,
+    TableGroupPosY decimal null,
+    TableGroupImage varchar(100),
+    TableGroupActive bit not null
+)
+GO
+create table TableInGroups
+(
+    TableID int constraint TIG_TableID_FK foreign key references Tables(TableID) not null,
+    TableGroupID int constraint TableGroupID_FK foreign key references TableGroups(TableGroupID) not null,
+    MaxTableSeatNumber int not null,
+    TablePosX decimal null,
+    TablePosY decimal null,
+    RestaurantArea varchar(50) null,
+    RestaurantZone varchar(5) null,
+    RestaurantFloor int null,
+    primary key(TableID, TableGroupID)  
+)
+GO
+create table TableAvailabilityDates
+(
+    TableID int not null,
+    _Datetime datetime not null,
+    TableGroupID int not null,
+    AvailabilityStatus varchar(1),
+    CheckOutStatus varchar(1),
+    CleaningStatus varchar(1),
+    primary key (TableID, _Datetime, TableGroupID) 
+)
+GO
+
+
+ALTER TABLE TableAvailabilityDates
+  ADD CONSTRAINT TAD_TableID_FK
+  FOREIGN KEY(TableID,TableGroupID) REFERENCES TableInGroups(TableID,TableGroupID)
+GO
+
+create table ReservationEntry(
+ReservationID int constraint ReservationID_PK primary key identity,
+CustomerID int constraint CustomerID_FK foreign key references Customers(CustomerID) not null,
+RestaurantID int constraint RestaurantID_FK foreign key references Restaurants(RestaurantID) not null,
+PartySize smallint not null default 1,
+ReservationStatus varchar(20) not null default 'on Hold',
+EntryOrigin varchar(20) not null default 'app',
+CreationDateTime datetime not null default getdate(),
+ReservationDateTime datetime not null,
+CheckinDateTime datetime null,
+SeatingDateTime datetime null,
+CheckoutDateTime datetime null,
+CustomerMessage varchar(100) null
+)
+GO
+
+create table ReservationEntryTable(
+TableID int constraint TableID_FK foreign key references Tables(TableID),
+ReservationID int constraint ReservationID_FK foreign key references ReservationEntry(ReservationID),
+constraint RET_Comp_PK primary key (TableID, ReservationID)
+)
+GO
+
+create table WaitlistEntry(
+	WaitlistEntryID int constraint WaitlistEntryID_PK  primary key identity,
+	CustomerID int constraint CustomerWaitID_FK foreign key references Customers(CustomerID) not null,
+	RestaurantID int constraint RestaurantWaitID_FK foreign key references Restaurants(RestaurantId) not null,
+	PartySize smallint not null default 1,
+	WaitlistStatus varchar(20) not null default 'active',
+	EntryOrigin varchar(20) not null default 'app',
+	CheckinDate datetime not null default getdate(),
+	SeatingDate datetime null,
+	CheckoutDate datetime null
+)
+GO
+
+create table WaitlistEntryTable(
+TableID int constraint TableWaitID_FK foreign key references Tables(TableID),
+WaitlistEntryID int constraint WaitlistEntryID_FK foreign key references WaitlistEntry(WaitlistEntryID),
+constraint WET_Comp_PK primary key (TableID, WaitlistEntryID)
+)
+GO
+
+INSERT Authentication (Username,Password) Values
+('jDoe', 'jDoe#1'),
+('wSmith', 'wSmith#2'),
+('wTurner', 'wTurner#3'),
+('jPerry', 'jPerry#4'),
+('jBinoche', 'jBinoche#5'),
+('mStewart', 'mStewart#6'),
+('eQueen', 'eQueen#7'),
+('sLittle', 'sLittle#8'),
+('hClinton', 'hClinton#9'),
+('bObama', 'bObama#10')
+
+INSERT Users(FirstName,LastName,Email,AuthenticationID) VALUES
+('John','Doe','jdoe@yahoo.com', 1),
+('Will', 'Smith','wsmith@yahoo.com', 2),
+('Willian', 'Turner','wturner@yahoo.com', 3),
+('Jane', 'Perry','jperry@yahoo.com', 4),
+('Juliet', 'Binoche','jbinoche@yahoo.com', 5),
+('Martha', 'Stewart','mstewart@yahoo.com', 6),
+('Elisabeth', 'Queen','equeen@yahoo.com', 7),
+('Stuart', 'Little','slittle@yahoo.com', 8),
+('Hillary', 'Clinton','hclinton@yahoo.com', 9),
+('Barack', 'Obama','bobama@yahoo.com', 10);
+
+INSERT Customers(UserID) VALUES
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10);
+
+INSERT Owners(UserID) VALUES
+(1),
+(2),
+(3),
+(4);
+
+INSERT Employees(UserID) VALUES
+(4),
+(5),
+(6),
+(7),
+(8);
+
+
+
+
+
+INSERT Restaurants(RestaurantName, LayoutActive) VALUES
+('Thai Food',NULL),
+('Japan & I',NULL),
+('Brazilian Soul',NULL),
+('Steak in House', NULL);
+
+INSERT RestaurantOwners (RestaurantId,OwnerID,Status,Active,Request, RequestStatus) VALUES
+(1,1,'Primary Owner',1,0,'Approved'),
+(2,2,'Primary Owner',1,0,'Approved'),
+(3,3,'Primary Owner',1,0,'Approved'),
+(4,4,'Primary Owner',1,0,'Approved');
+
+INSERT RestaurantEmployees(RestaurantId,EmployeeID,Status,Active,NewRequestFlag, RequestStatus) VALUES
+(3,1,'Employee',1,0,'Approved'),
+(1,2,'Employee',1,0,'Approved'),
+(1,3,'Employee',1,0,'Approved'),
+(2,4,'Employee',1,0,'Approved'),
+(3,5,'Employee',1,0,'Approved');
+
+
+
+INSERT AuthenticationMatrix(AuthenticationID, RestaurantID,Role) Values
+(1,1,'Owner'),
+(2,2,'Owner'),
+(3,3,'Owner'),
+(4,4,'Owner'),
+(4,3,'Employee'),
+(5,1,'Manager'),
+(6,1,'Employee'),
+(7,2,'Manager'),
+(8,3,'Manager');
+
+
+
+
+INSERT Layouts(RestaurantID, LayoutName, LayoutImage) VALUES
+( 1, 'Layout_0', 'layout'),
+(1, 'Jessy_layout', 'c:/SAIT/image/layout_round_table.jpg');
+
+UPDATE Restaurants SET LayoutActive=1 WHERE RestaurantId=1;
+
+INSERT Tables(RestaurantID, TableName, TableMaxNumberSeats, TableImage, TableImageAvailable, TableImageUnavailable, TableImageCheckout, TableImageCleaning, TableType, TableSize, CreationDate,TableActive) VALUES
+( 1, 'A[6]', 6, 'A_6_blue', 'A_6_green', 'A_6_red', 'A_6_orange', 'A_6_purple', 'Rectangle', '', '2020-03-17',0),
+( 1, 'B[4]', 4, 'B_4_blue', 'B_4_green', 'B_4_red', 'B_4_orange', 'B_4_purple', 'Rectangle', '', '2019-11-11',1),
+( 1, 'B[2]', 2, 'B_2_blue', 'B_2_green', 'B_2_red', 'B_2_orange', 'B_2_purple', 'Square', '', '2019-09-17',1),
+( 1, 'C1[2]', 2, 'C_1_blue', 'C_1_green', 'C_1_red', 'C_1_orange', 'C_1_purple', 'Square', '', '2019-08-21',1),
+( 1, 'C2[2]', 2, 'C_2_blue', 'C_2_green', 'C_2_red', 'C_2_orange', 'C_2_purple', 'Square', '', '2019-08-21',1),
+( 1, 'C3[2]', 2, 'C_3_blue', 'C_3_green', 'C_3_red', 'C_3_orange', 'C_3_purple', 'Square', '', '2020-06-01',1);
+
+INSERT TableGroups ( LayoutID, TableGroupName, TableGroupPriority,TableGroupPosX, TableGroupPosY, TableGroupImage,TableGroupActive) VALUES
+( 1, 'A[6]', 1, 105, 169, 'A_6_blue',1),
+( 1, 'B[4]', 4, 230, 165, 'B_4_blue',1),
+( 1, 'B[2]', 7, 390, 165, 'B_2_blue',1),
+( 1, 'C1[2]', 9, 232, 336, 'C_1_blue',1),
+( 1, 'C2[2]', 11, 320, 336, 'C_2_blue',1),
+( 1, 'C3[2]', 8, 410, 336, 'C_3_blue',1),
+( 1, 'B4-B2', 2, 218, 155, 'B_4_B_2',1),
+( 1, 'C1-C2', 6, 225, 329, 'C_1_C_2',1),
+( 1, 'C2-C3', 5, 313, 329, 'C_2_C_3',1),
+( 1, 'C1-C2-C3', 3, 225, 329, 'C1_C2_C3',1);
+
+INSERT TableInGroups(TableID, TableGroupID, TablePosX, TablePosY, MaxTableSeatNumber, RestaurantArea) VALUES
+(1, 1, 105, 169, 6, 'A'),
+(2, 2, 230, 165, 4, 'B'),
+(3, 3, 390, 165, 2, 'B'),
+(4, 4, 232, 336, 2, 'C'),
+(5, 5, 320, 336, 2, 'C'),
+(6, 6, 410, 336, 2, 'C'),
+(2, 7, 230, 165, 4, 'B'),
+(3, 7, 390, 165, 2, 'B'),
+(4, 8, 232, 336, 2, 'C'),
+(5, 8, 320, 336, 2, 'C'),
+(5, 9, 320, 336, 2, 'C'),
+(6, 9, 410, 336, 2, 'C'),
+(4, 10, 232, 336, 2, 'C'),
+(5, 10, 320, 336, 2, 'C'),
+(6, 10, 410, 336, 2, 'C');
+
+INSERT TableAvailabilityDates (TableID, _Datetime, AvailabilityStatus, CheckoutStatus, CleaningStatus, TableGroupID) VALUES
+(1, getdate(), 1, 0, 0, 1),
+(2, getdate(), 1, 0, 0, 2),
+(3, getdate(), 1, 0, 0, 3),
+(4, getdate(), 1, 0, 0, 4),
+(5, getdate(), 1, 0, 0, 5),
+(6, getdate(), 1, 0, 0, 6);
+
+
+INSERT ReservationEntry(CustomerId, RestaurantID, PartySize, ReservationStatus, EntryOrigin, CreationDateTime, ReservationDateTime) VALUES
+( 4, 1, 6, 'confirmed', 'email', getdate(),  DateAdd(HOUR,1,getdate())),
+( 2, 1, 3, 'confirmed', 'phone', getdate(), DateAdd(HOUR,2,getdate())),
+( 3, 1, 4, 'on Hold', 'app', getdate(),  DateAdd(HOUR,2,getdate())),
+( 10, 1, 5, 'confirmed', 'phone', getdate(),  DateAdd(day,5,getdate())),
+( 8, 2, 6, 'confirmed', 'email', getdate(),  DateAdd(HOUR,1,getdate())),
+( 9, 2, 3, 'confirmed', 'phone', getdate(), DateAdd(HOUR,2,getdate())),
+( 7, 2, 4, 'on Hold', 'app', getdate(),  DateAdd(HOUR,2,getdate())),
+( 6, 2, 5, 'confirmed', 'phone', getdate(),  DateAdd(day,5,getdate())),
+( 1, 3, 6, 'confirmed', 'email', getdate(),  DateAdd(HOUR,1,getdate())),
+( 5, 3, 3, 'confirmed', 'phone', getdate(), DateAdd(HOUR,2,getdate())),
+( 2, 3, 4, 'on Hold', 'app', getdate(),  DateAdd(HOUR,2,getdate())),
+( 9, 3, 5, 'confirmed', 'phone', getdate(),  DateAdd(day,5,getdate())),
+( 10, 4, 6, 'confirmed', 'email', getdate(),  DateAdd(HOUR,1,getdate())),
+( 6, 4, 3, 'confirmed', 'phone', getdate(), DateAdd(HOUR,2,getdate())),
+( 3, 4, 4, 'on Hold', 'app', getdate(),  DateAdd(HOUR,2,getdate())),
+( 2, 4, 5, 'confirmed', 'phone', getdate(),  DateAdd(day,5,getdate()));
+
+
+ INSERT WaitlistEntry(RestaurantID, CustomerID, PartySize, WaitlistStatus,EntryOrigin) VALUES
+( 1, 6, 3, 'active', 'app'),
+( 2, 6, 2, 'active', 'entrance'),
+( 3, 7, 6, 'active', 'app'),
+( 4, 3, 2, 'active', 'app'),
+( 1, 4, 5, 'active', 'app'),
+( 1, 5, 3, 'active', 'app'),
+( 4, 5, 4, 'active', 'app');
+
+

@@ -1,0 +1,60 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model IEnumerable<TableReady.Core.App.Models.EmployeeModelView>
+
+@{
+    Layout = null;
+}
+<br />
+<h3>Employee List</h3>
+<hr />
+<p>
+    <a class="btn btn-primary" asp-action="EmployeeApply">Employee Application</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Update", "EmployeeEdit", new {  id=item.RestaurantId }) |*@
+                    @Html.ActionLink("Details", "EmployeeDetails", new { id = item.RestaurantId }, new { @class = "btn btn-primary mx-1" })
+                    @*@Html.ActionLink("Cancel", "EmployeeCancel", new {  id=item.RestaurantId })*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,58 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.WaitCustomerModelView
+
+@{
+    ViewData["Title"] = "Edit Party";
+}
+<div id="Error" style="color: red;">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+<div id="Error" style="color: blue;">
+    <p>@ViewBag.Message</p>
+</div>
+<h3>Update Waitlist</h3>
+<hr />
+<br />
+<div>
+    @using (Html.BeginForm())
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Restaurant)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.WaitlistStatus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WaitlistStatus)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EntryOriginw)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EntryOriginw)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PartySizew)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.EditorFor(model => model.PartySizew, new { @type = "number", @min = "1", @max = "100" })
+                <span asp-validation-for="PartySizew" class="text-danger"></span>
+            </dd>
+            @Html.HiddenFor(model => model.WaitlistEntryId)
+            <dt class="col-sm-2"><input type="submit" value="Update" class="btn btn-primary" /></dt>
+            <dd class="col-sm-10"></dd>
+
+        </dl>
+    }
+</div>
+<div>
+    <a class="btn btn-dark" asp-action="WaitlistShow">Back to List</a>
+</div>

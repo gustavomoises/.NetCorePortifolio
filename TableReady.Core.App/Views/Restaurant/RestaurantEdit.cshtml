@@ -1,0 +1,40 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.RestaurantCreateModelView
+
+@{
+    ViewData["Title"] = "RestaurantEdit";
+}
+<div id="Error" style="color: red;">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+<div id="Error" style="color: blue;">
+    <p>@ViewBag.Message</p>
+</div>
+<h3>Update Restaurant</h3>
+<hr />
+<br />
+<div>
+    @using (Html.BeginForm())
+    {
+        <dl class="row">
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.RestaurantName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.EditorFor(model => model.RestaurantName)
+            </dd>
+
+            @Html.HiddenFor(model => model.RestaurantId)
+            <dt class="col-sm-2"><input type="submit" value="Update" class="btn btn-primary" /></dt>
+            <dd class="col-sm-10"></dd>
+        </dl>
+    }
+</div>
+<div>
+    <a class="btn btn-dark" asp-action="RestaurantShow">Back to Restaurant Information</a>
+</div>

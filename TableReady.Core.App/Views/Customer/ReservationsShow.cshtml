@@ -1,0 +1,75 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+
+@model IEnumerable<TableReady.Core.App.Models.ResCustomerModelView>
+
+@{
+    ViewData["Title"] = "Reservations";
+}
+<div id="Error" style="color: red;">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+<div id="Error" style="color: blue;">
+    <p>@ViewBag.Message</p>
+</div>
+
+<h3>Reservations</h3>
+<hr />
+<br />
+<p>
+    <a class="btn btn-success" asp-action="ReservationCreate">Add New Reservation</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartySize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryOrigin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationStatus)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartySize)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryOrigin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservationStatus)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "ReservationEdit", new { id = item.ReservationEntryId }, new { @class = "btn btn-success mx-1" }) |
+                    @Html.ActionLink("Details", "ReservationDetails", new { id = item.ReservationEntryId }, new { @class = "btn btn-primary mx-1" }) |
+                    @Html.ActionLink("Cancel", "ReservationCancel", new { id = item.ReservationEntryId }, new { @class = "btn btn-danger mx-1" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

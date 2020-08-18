@@ -1,0 +1,70 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model IEnumerable<TableReady.Core.App.Models.OwnerModelView>
+
+@{
+    Layout = null;
+}
+
+<br />
+<h3>Owner List</h3>
+<hr />
+<table>
+    <tr>
+        <td>
+            <a class="btn btn-success mx-2" asp-action="RestaurantCreate">Add New Restaurant</a>
+        </td>
+        <td>
+            <a class="btn btn-primary mx-2" asp-action="OwnerApply">Ownership Application</a>
+        </td>
+    </tr>
+</table>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Update", "RestaurantEdit", new { id = item.RestaurantId }) |*@
+                    @Html.ActionLink("Details", "OwnerDetails", new { id = item.RestaurantId }, new { @class = "btn btn-primary mx-1" })
+                    @*@Html.ActionLink("Cancel", "RestaurantCancel", new { id = item.RestaurantId })*@
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

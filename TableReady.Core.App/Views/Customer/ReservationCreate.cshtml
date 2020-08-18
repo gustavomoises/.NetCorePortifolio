@@ -1,0 +1,52 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.ResCustomerModelView
+
+@{
+    ViewData["Title"] = "ReservationCreate";
+}
+<div id="Error" style="color: red;">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
+<div id="Error" style="color: blue;">
+    <p>@ViewBag.Message</p>
+</div>
+<h3>Add Reservation</h3>
+<hr />
+<br />
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <dl class="row">
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </dt>
+            <dd class="col-sm-6">
+                <select id="uxRestaurants" asp-for="RestaurantID" asp-items="ViewBag.Restaurants" class="form-control"></select>
+            </dd>
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.ReservationDate)
+            </dt>
+            <dd class="col-sm-6">
+                @Html.EditorFor(model => model.ReservationDate)
+            </dd>
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.PartySize)
+            </dt>
+            <dd class="col-sm-6">
+                <input min="1" max="100" type="number" asp-for="PartySize" class="form-control" />
+                <span asp-validation-for="PartySize" class="text-danger"></span>
+            </dd>
+            <dt class="col-sm-8"><input type="submit" value="Add" class="btn btn-primary" /></dt>
+            <dd class="col-sm-6"></dd>
+
+        </dl>
+    }
+</div>
+<div>
+    <a class="btn btn-dark" asp-action="ReservationsShow">Back to List</a>
+</div>

@@ -1,0 +1,48 @@
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.deps.json
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csprojAssemblyReference.cache
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfoInputs.cache
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfo.cs
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CoreCompileInputs.cache
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CopyComplete
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.deps.json
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csprojAssemblyReference.cache
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfoInputs.cache
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfo.cs
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CopyComplete
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.deps.json
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csprojAssemblyReference.cache
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfoInputs.cache
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfo.cs
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CopyComplete
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.deps.json
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csprojAssemblyReference.cache
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfoInputs.cache
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.AssemblyInfo.cs
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CoreCompileInputs.cache
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.csproj.CopyComplete
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.dll
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.BLL\obj\Debug\netcoreapp3.1\TableReady.Core.BLL.pdb

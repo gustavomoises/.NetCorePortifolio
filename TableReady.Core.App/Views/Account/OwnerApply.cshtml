@@ -1,0 +1,33 @@
+﻿@*
+    //Author: Gustavo Moises (Developer)
+    //Date: 8/7/2020
+    //Thead Project PROJ—207-OOS
+*@
+@model TableReady.Core.App.Models.OwnerModelView
+
+@{
+    ViewData["Title"] = "Owner Apply";
+}
+
+<h3>Owner Application</h3>
+
+<div>
+
+    <hr />
+    @using (Html.BeginForm())
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Restaurant)
+            </dt>
+            <dd class="col-sm-4">
+                <select asp-for="RestaurantId" class="form-control" asp-items="ViewBag.Restaurants"></select>
+            </dd>
+            <dt class="col-sm-2"><input type="submit" value="Apply" class="btn btn-primary" /></dt>
+            <dd class="col-sm-4"></dd>
+        </dl>
+    }
+</div>
+<div>
+    <a class="btn btn-dark" asp-action="Profile">Back to List</a>
+</div>

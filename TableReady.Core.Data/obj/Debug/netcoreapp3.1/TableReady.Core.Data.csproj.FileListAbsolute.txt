@@ -1,0 +1,58 @@
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.deps.json
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfoInputs.cache
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfo.cs
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.json
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.dev.json
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.genruntimeconfig.cache
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csproj.CoreCompileInputs.cache
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core1\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.deps.json
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.json
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.dev.json
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfoInputs.cache
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfo.cs
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csproj.CoreCompileInputs.cache
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.genruntimeconfig.cache
+C:\Users\849950\source\repos\TableReady.Core\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csprojAssemblyReference.cache
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.deps.json
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.json
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.dev.json
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfoInputs.cache
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfo.cs
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csproj.CoreCompileInputs.cache
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.genruntimeconfig.cache
+C:\Users\Jessy\Downloads\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csprojAssemblyReference.cache
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.deps.json
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.json
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.dev.json
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csprojAssemblyReference.cache
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfoInputs.cache
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfo.cs
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csproj.CoreCompileInputs.cache
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\Jessy\source\repos\CPRG214.NETWebApplications\TableReady Workshops\Workshop 2 Final\TableReady.Core_Gustavo\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.genruntimeconfig.cache
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.deps.json
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.json
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.runtimeconfig.dev.json
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\bin\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfoInputs.cache
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.AssemblyInfo.cs
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.csproj.CoreCompileInputs.cache
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.dll
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.pdb
+C:\Users\849950\source\repos\TableReady.Core_Final\TableReady.Core.Data\obj\Debug\netcoreapp3.1\TableReady.Core.Data.genruntimeconfig.cache
