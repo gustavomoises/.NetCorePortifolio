@@ -6,4 +6,4 @@ Code Developed by Gustavo Moises and Web Designed by Jessy Perreault.
 
 Database script: Final_TableReady_Database.txt
 
-Users & Roles: Users&Roles.docx
+Users authentication and Roles: Users&Roles.docx
